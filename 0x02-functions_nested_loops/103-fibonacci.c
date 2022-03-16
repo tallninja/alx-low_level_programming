@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 /**
-* main - prints the sum of the even-valued terms
-* Return: 0 if executed successfully
-*/
+ * main - prints the sum of the even-valued terms
+ * Return: 0 if executed successfully
+ */
 int main(void)
 {
 	unsigned long int a = 1;
@@ -23,4 +23,6 @@ int main(void)
 		b = c;
 	}
 	printf("%ld\n", sum);
+
+	return (0);
 }
