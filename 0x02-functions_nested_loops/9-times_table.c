@@ -14,7 +14,7 @@ void times_table(void)
 		{
 			int product = col * row;
 
-			if (product > 9 && col == 0)
+			if (product > 9)
 			{
 				_putchar((product / 10) + '0');
 				_putchar((product % 10) + '0');
