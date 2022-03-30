@@ -1,10 +1,10 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * wildcmp-function that compare 2 strings
- *@s1:char type
- *@s2:char type
- *Return:Always success.
+ * wildcmp - compares 2 strings
+ * @s1: first string
+ * @s2: second string
+ * Return: 1 if string are same and 0 otherwise.
  **/
 int wildcmp(char *s1, char *s2)
 {
