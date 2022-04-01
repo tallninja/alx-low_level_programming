@@ -11,16 +11,17 @@
 
 int main(int argc, char *argv[])
 {
-	int coins[5] = {25, 10, 5, 2, 1};
-	int cents = atoi(argv[1]);
-	int minimum_coins = 0;
-	int i = 0;
+	int coins[] = {25, 10, 5, 2, 1};
+	int cents, minimum_coins, i;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
+
+	cents = atoi(argv[1]);
+	minimum_coins = 0;
 
 	if (cents < 0)
 		printf("%d\n", 0);
