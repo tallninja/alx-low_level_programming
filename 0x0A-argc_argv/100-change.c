@@ -11,8 +11,10 @@
 
 int main(int argc, char *argv[])
 {
+	int coins[5] = {25, 10, 5, 2, 1};
 	int cents = atoi(argv[1]);
 	int minimum_coins = 0;
+	int i = 0;
 
 	if (argc != 2)
 	{
@@ -20,39 +22,17 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 
-	while (cents > 0)
+	if (cents < 0)
+		printf("%d\n", 0);
+
+	for (i = 0; i < 5 && cents >= 0; i++)
 	{
-		if (cents >= 25)
+		while (coins[i] <= cents)
 		{
-			cents -= 25;
-			minimum_coins++;
-		}
-
-		else if (cents >= 10)
-		{
-			cents -= 10;
-			minimum_coins++;
-		}
-
-		else if (cents >= 5)
-		{
-			cents -= 5;
-			minimum_coins++;
-		}
-
-		else if (cents >= 2)
-		{
-			cents -= 2;
-			minimum_coins++;
-		}
-
-		else
-		{
-			cents -= 1;
+			cents -= coins[i];
 			minimum_coins++;
 		}
 	}
-
 	printf("%d\n", minimum_coins);
 
 	return (0);
