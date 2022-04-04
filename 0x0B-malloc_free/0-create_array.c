@@ -3,24 +3,29 @@
 #include <stddef.h>
 
 /**
-* create_array - creates an array of chars
-* @size: size of the array
-* @c: initaialize the array
-* Return: pointer to the array
-*/
+ * create_array - creates an array of chars
+ * @size: size of the array
+ * @c: initaialize the array
+ * Return: pointer to the array
+ */
 
 char *create_array(unsigned int size, char c)
 {
-	char *ar;
+	char *arr;
 	unsigned int i;
 
 	if (size == 0)
 		return (NULL);
 
-	ar = malloc(size * sizeof(char));
+	arr = malloc(size * sizeof(char));
+
+	if (arr == NULL)
+		return (NULL);
 
 	for (i = 0; i < size; i++)
-		ar[i] = c;
+		arr[i] = c;
 
-	return (ar);
+	arr[i + 1] = '\0';
+
+	return (arr);
 }
