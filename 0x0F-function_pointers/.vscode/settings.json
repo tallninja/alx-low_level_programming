@@ -1,0 +1,7 @@
+{
+	"files.associations": {
+		"stdlib.h": "c",
+		"main.h": "c",
+		"function_pointers.h": "c"
+	}
+}
