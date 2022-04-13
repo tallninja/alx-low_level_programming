@@ -1,5 +1,3 @@
-#include "function_pointers.h"
-
 /**
  * _strcpy - creates a copy of a string
  * @src: the string to be copied

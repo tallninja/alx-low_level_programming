@@ -9,12 +9,8 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	char *str;
-
-	str = malloc(sizeof(char) * _strlen(name));
-
-	if (str == NULL)
-		return;
-
-	f(_strcpy(name, str));
+	if (name && f)
+	{
+		f(name);
+	}
 }

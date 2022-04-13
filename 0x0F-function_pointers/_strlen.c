@@ -1,5 +1,3 @@
-#include "function_pointers.h";
-
 /**
  * _strlen - calculates the length of a string
  * @str: the string
