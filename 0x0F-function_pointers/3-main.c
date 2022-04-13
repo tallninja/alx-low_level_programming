@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	if (strlen(argv[2]) > 1)
+	if (strlen(argv[2]) != 1)
 	{
 		printf("Error\n");
 		exit(99);
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	if (calc == NULL)
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 
 	result = calc(a, b);
