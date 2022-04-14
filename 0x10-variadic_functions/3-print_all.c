@@ -24,7 +24,7 @@ void print_int(va_list valist)
  */
 void print_float(va_list valist)
 {
-	printf("%f", va_arg(valist, double));
+	printf("%.6f", va_arg(valist, double));
 }
 
 /**
