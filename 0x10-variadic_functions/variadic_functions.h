@@ -11,17 +11,14 @@ void print_strings(const char *separator, const unsigned int n, ...);
 void print_all(const char *const format, ...);
 
 /**
- * struct arg - contains the code for the
- * argument trype and the corresponding
- * print function
- * @code: character code
- * @print_func: function to print the argument
+ * struct char_func - struct
+ * @letter: letter signifying data type
+ * @func: function ptr
  */
-
-typedef struct arg
+typedef struct char_func
 {
-	char code;
-	void (*print_func)(va_list);
-} arg_t;
+	char letter;
+	void (*func)(va_list);
+} char_type;
 
 #endif
