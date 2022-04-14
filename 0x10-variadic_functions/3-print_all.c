@@ -62,7 +62,7 @@ void print_all(const char *const format, ...)
 						 {'s', print_string},
 						 {'\0', NULL}};
 
-	va_start(args, format);
+	va_start(args, strlen(format));
 
 	while (format != NULL && format[j] != '\0')
 	{
