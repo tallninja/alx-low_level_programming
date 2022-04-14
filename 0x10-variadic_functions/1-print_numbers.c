@@ -13,11 +13,11 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 
 	va_start(arg_ptr, n);
 
-	for (i = 0; i < n - 1; i++)
+	for (i = 0; i < n; i++)
 	{
 		printf("%d", va_arg(arg_ptr, int));
 
-		if (seperator != NULL)
+		if (i < (n - 1) && seperator)
 			printf("%s", seperator);
 	}
 
