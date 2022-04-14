@@ -15,10 +15,10 @@ void print_numbers(const char *seperator, const unsigned int n, ...)
 
 	for (i = 0; i < n - 1; i++)
 	{
-		if (seperator == NULL)
-			printf("%d", va_arg(arg_ptr, int));
-		else
-			printf("%d%s", va_arg(arg_ptr, int), seperator);
+		printf("%d", va_arg(arg_ptr, int));
+
+		if (seperator)
+			printf("%s", seperator);
 	}
 
 	printf("%d\n", va_arg(arg_ptr, int));
