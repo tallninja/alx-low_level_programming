@@ -9,11 +9,11 @@ section .data
 section .text
     main:
         ; Create a stack-frame, re-aligning the stack to 16-byte alignment before calls
-        push    rbp
-        mov     rdi, fmt
-        mov     rsi, message
-        mov     rax, 0
-        call    printf wrt ..plt ; call printf with relation to procedure linkage table
+        push	rbp
+        mov		rdi, fmt
+        mov		rsi, message
+        mov		rax, 0
+        call	printf wrt ..plt ; call printf with relation to procedure linkage table
         pop		rbp ; Pop stack
         mov		rax, 0   ; Exit code 0
         ret
