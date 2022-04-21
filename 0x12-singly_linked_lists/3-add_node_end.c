@@ -32,6 +32,7 @@ list_t *add_node_end(list_t **head, const char *str)
 	else
 	{
 		list_t *last_node = *head;
+
 		while (last_node->next != NULL) /* loop until end of the list */
 			last_node = last_node->next;
 
