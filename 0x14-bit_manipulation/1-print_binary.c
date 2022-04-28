@@ -7,7 +7,6 @@
 
 void print_binary(unsigned long int n)
 {
-	char *str = malloc(sizeof(n));
 	int i = 0;
 
 	if (n == 0)
