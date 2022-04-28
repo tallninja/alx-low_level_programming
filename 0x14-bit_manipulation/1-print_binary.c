@@ -7,7 +7,8 @@
 
 void print_binary(unsigned long int n)
 {
-	int i = 0;
+	int i = 0, len = 0;
+	unsigned long int temp = n;
 
 	if (n == 0)
 	{
@@ -15,17 +16,17 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	while (n)
+	while (temp)
 	{
-		if (n & 1)
-			str[i] = '1';
-		else
-			str[i] = '0';
-
-		n >>= 1;
-		i++;
+		temp >>= 1;
+		len++;
 	}
 
-	for (i = strlen(str); i >= 0; i--)
-		_putchar(str[i]);
+	for (i = len; i >= 0; i--)
+	{
+		if ((n >> i) & 1)
+			_putchar('1');
+		else
+			_putchar('0');
+	}
 }
