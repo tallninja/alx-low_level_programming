@@ -249,7 +249,7 @@ julien@ubuntu:~/0x14. Binary$ ./f
 julien@ubuntu:~/0x14. Binary$
 ```
 
-### Endianness
+### 6. Endianness
 
 Write a function that checks the endianness.
 - Prototype: `int get_endianness(void);`
