@@ -29,7 +29,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	buff[buff_size] = '\0';
 
 	letters_wrote = write(STDOUT_FILENO, buff, buff_size);
-	if (letters_wrote < buff_size - 1)
+	if (letters_wrote < buff_size)
 		return (0);
 
 	close(fd); /* close the file upon completion */
