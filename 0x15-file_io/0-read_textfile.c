@@ -1,40 +1,52 @@
 #include "main.h"
+#include <fcntl.h>
 
 /**
- * read_textfile - reads a text file and prints it
- * @filename: file
- * @letters: number of letters it should read and print
- * Return: the actual number of letters it could read and print
+ * read_textfile - reads a text file and prints it to the
+ * POSIX standard output
+ * @filename: filename
+ * @letters: number of letters in the file
+ * Return: letters it could read and print
  */
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t wr, n_letters = 0;
-	char *buf;
-	int fd;
+	ssize_t letters_read, letters_wrote;
+	int fd, buff_size = letters;
+	char *buff;
 
 	if (filename == NULL)
 		return (0);
 
 	fd = open(filename, O_RDONLY);
-	if (fd == -1)
+	if (fd == -1) /* file could not be opened */
 	{
 		close(fd);
 		return (0);
 	}
-	buf = malloc(sizeof(char) * letters);
-	if (buf == NULL)
-		return (0);
 
-	n_letters = read(fd, buf, letters);
-
-	if (n_letters == -1)
+	buff = malloc(sizeof(char) * buff_size);
+	if (buff == NULL)
+	{
+		close(fd);
 		return (0);
+	}
 
-	wr = write(STDOUT_FILENO, buf, n_letters);
-	if (wr == -1 || wr != n_letters)
+	letters_read = read(fd, buff, buff_size);
+	if (letters_read == -1)
+	{
+		close(fd), free(buff);
 		return (0);
-	close(fd);
-	free(buf);
-	return (wr);
+	}
+
+	letters_wrote = write(STDOUT_FILENO, buff, letters_read);
+	if (letters_wrote == -1 || letters_wrote != buff_size)
+	{
+		close(fd), free(buff);
+		return (0);
+	}
+
+	close(fd); /* close the file upon completion */
+	free(buff);
+	return (letters_read);
 }
