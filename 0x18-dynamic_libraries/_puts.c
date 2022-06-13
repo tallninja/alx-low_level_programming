@@ -1,4 +1,4 @@
-#include "lists.h"
+#include "main.h"
 
 /**
  * _puts - writes a string to stdout
