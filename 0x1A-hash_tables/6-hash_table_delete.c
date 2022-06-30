@@ -21,7 +21,7 @@ void hash_table_delete(hash_table_t *ht)
 			curr = ht->array[i];
 			free(curr->key);
 			free(curr->value);
-			ht->array[i] = ht->curr[i]->next;
+			ht->array[i] = ht->array[i]->next;
 			free(curr);
 		}
 	}
